@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Website</title>
+    <style>
+    /* ================================
+   GLOBAL CSS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    width: 100%;
+    background-color: #0d47a1;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 60px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo h1 {
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+
+.logo p {
+    font-size: 15px;
+    color: #bbdefb;
+}
+
+
+/* ================================
+   NAVIGATION BAR
+================================ */
+
+.navbar ul {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+
+    padding: 8px 12px;
+
+    transition: 0.3s;
+}
+
+
+.navbar ul li a:hover {
+    background-color: white;
+    color: #0d47a1;
+    border-radius: 5px;
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    height: 500px;
+
+    background: linear-gradient(
+        rgba(13, 71, 161, 0.8),
+        rgba(21, 101, 192, 0.8)
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+
+.hero-content {
+    max-width: 800px;
+}
+
+
+.hero-content h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+.hero-content button {
+    padding: 14px 30px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #ff9800;
+    color: white;
+
+    font-size: 17px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.hero-content button:hover {
+    background-color: #e65100;
+    transform: scale(1.1);
+}
+
+
+/* ================================
+   COMMON SECTION
+================================ */
+
+.section {
+    padding: 70px 30px;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.section-title {
+    text-align: center;
+
+    font-size: 35px;
+    color: #0d47a1;
+
+    margin-bottom: 40px;
+
+    position: relative;
+}
+
+
+.section-title::after {
+    content: "";
+
+    width: 80px;
+    height: 4px;
+
+    background-color: #ff9800;
+
+    display: block;
+
+    margin: 10px auto;
+}
+
+
+/* ================================
+   ABOUT SECTION
+================================ */
+
+.about {
+    background-color: white;
+}
+
+
+.about-text {
+    text-align: center;
+    font-size: 18px;
+
+    max-width: 900px;
+    margin: auto;
+
+    margin-bottom: 40px;
+}
+
+
+.about-box {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+
+.about-card {
+    width: 30%;
+
+    padding: 30px;
+
+    background-color: #e3f2fd;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    transition: 0.4s;
+}
+
+
+.about-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 8px 20px #aaa;
+}
+
+
+.about-card h3 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   COURSES SECTION
+================================ */
+
+.courses {
+    background-color: #f4f6f8;
+}
+
+
+.course-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.course-card {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 10px #ccc;
+
+    transition: 0.4s;
+}
+
+
+.course-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 10px 25px #999;
+}
+
+
+.course-card h3 {
+    color: #0d47a1;
+
+    margin-bottom: 15px;
+}
+
+
+.course-card p {
+    margin-bottom: 20px;
+}
+
+
+.course-card a {
+    text-decoration: none;
+
+    background-color: #0d47a1;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    display: inline-block;
+}
+
+
+.course-card a:hover {
+    background-color: #ff9800;
+}
+
+
+/* ================================
+   FACILITIES
+================================ */
+
+.facilities {
+    background-color: white;
+}
+
+
+.facility-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.facility-card {
+    padding: 30px;
+
+    border-left: 5px solid #0d47a1;
+
+    background-color: #f5f5f5;
+
+    transition: 0.3s;
+}
+
+
+.facility-card:hover {
+    background-color: #e3f2fd;
+
+    transform: scale(1.05);
+}
+
+
+.facility-card h3 {
+    color: #0d47a1;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================================
+   ACHIEVEMENT SECTION
+================================ */
+
+.achievement {
+    background-color: #e3f2fd;
+}
+
+
+.achievement-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+}
+
+
+.achievement-box {
+    width: 30%;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px #bbb;
+
+    transition: 0.3s;
+}
+
+
+.achievement-box:hover {
+    transform: scale(1.05);
+}
+
+
+.achievement-box h3 {
+    color: #0d47a1;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   CONTACT FORM
+================================ */
+
+.contact {
+    background-color: white;
+}
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    background-color: #f4f6f8;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px #ccc;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: #0d47a1;
+
+    box-shadow: 0 0 5px #90caf9;
+}
+.contact-form button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    background-color: #0d47a1;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+.contact-form button:hover {
+    background-color: #ff9800;
+}
+/* ================================
+   FOOTER
+================================ */
+.footer {
+    background-color: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+.footer-content h3 {
+    margin-bottom: 10px;
+}
+.footer-content p {
+    margin: 5px;
+}
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media screen and (max-width: 900px) {
+.header {
+        flex-direction: column;
+     gap: 15px;
+}
+.course-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 600px) {
+
+    .header {
+        padding: 15px;
+    }
+    .navbar ul {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 10px;
+    }
+    .hero-content h2 {
+        font-size: 30px;
+    }
+    .about-box {
+        flex-direction: column;
+    }
+    .about-card {
+        width: 100%;
+    }
+    .course-container {
+        grid-template-columns: 1fr;
+    }
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+    .achievement-container {
+        flex-direction: column;
+    }
+    .achievement-box {
+        width: 100%;
+    }
+}
+</style>
+ <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <h1>Maharashtra Mahavidyalaya</h1>
+            <p>Nilanga</p>
+        </div>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Maharashtra Mahavidyalaya</h2>
+            <p>
+                Empowering students through quality education,
+                innovation and technology.
+            </p>
+            <button>Explore More</button>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+    <h2 class="section-title">About Our College</h2>
+  <p class="about-text">
+                Maharashtra Mahavidyalaya, Nilanga is committed to providing
+                quality education and developing the overall personality of
+                students. The college offers various undergraduate and
+                postgraduate courses with modern facilities and experienced
+                faculty members.
+            </p>
+            <div class="about-box">
+
+                <div class="about-card">
+                    <h3>Quality Education</h3>
+                    <p>
+                        We provide quality education with modern teaching
+                        methods and practical learning.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Experienced Faculty</h3>
+                    <p>
+                        Our experienced and dedicated faculty members guide
+                        students towards success.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Modern Campus</h3>
+                    <p>
+                        The college provides modern laboratories and excellent
+                        infrastructure for students.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Courses Section -->
+    <section id="courses" class="courses section">
+
+        <div class="container">
+
+            <h2 class="section-title">Our Courses</h2>
+
+            <div class="course-container">
+
+                <div class="course-card">
+                    <h3>B.Sc. Computer Science</h3>
+
+                    <p>
+                        Study programming, database, web technology and
+                        computer applications.
+                    </p>
+
+                    <a href="#">Read More</a>
+                </div>
+                <div class="course-card">
+                    <h3>BCA</h3>
+                    <p>
+                        Learn computer applications, software development
+                        and information technology.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="course-card">
+                    <h3>M.Sc. Computer Science</h3>
+                    <p>
+                        Advanced study of computer science, research and
+                        modern technologies.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="course-card">
+                    <h3>MCA</h3>
+                    <p>
+                        Develop professional skills in software development
+                        and computer applications.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities section">
+        <div class="container">
+            <h2 class="section-title">College Facilities</h2>
+            <div class="facility-grid">
+    <div class="facility-card">
+                    <h3>Computer Laboratory</h3>
+                    <p>
+                        Well-equipped computer laboratories with modern
+                        hardware and software.
+                    </p>
+                </div>
+                <div class="facility-card">
+                    <h3>Library</h3>
+                    <p>
+                        A rich library with books, journals and digital
+                        learning resources.
+                    </p>
+                </div>
+                <div class="facility-card">
+                    <h3>Gym Facility</h3>
+                    <p>
+                        Modern gym facility for the physical fitness of
+                        students.
+                    </p>
+                </div>
+                <div class="facility-card">
+                    <h3>Sports Facility</h3>
+                    <p>
+                        Indoor and outdoor sports facilities are available
+                        for students.
+                    </p>
+                </div>
+                <div class="facility-card">
+                    <h3>Hostel Facility</h3>
+                    <p>
+                        Safe and comfortable hostel facility for students.
+                    </p>
+                </div>
+                <div class="facility-card">
+                    <h3>RO Water</h3>
+                    <p>
+                        Clean and safe drinking water facility is available
+                        on campus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Achievement Section -->
+    <section class="achievement section">
+        <div class="container">
+            <h2 class="section-title">Our Achievements</h2>
+            <div class="achievement-container">
+                <div class="achievement-box">
+                    <h3>University Topper</h3>
+                    <p>Students achieved University First Rank.</p>
+                </div>
+                <div class="achievement-box">
+                    <h3>Gold Medal</h3>
+                    <p>Students received Gold Medal for outstanding performance.</p>
+                </div>
+                <div class="achievement-box">
+                    <h3>Student Success</h3>
+                    <p>We focus on academic and professional development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+ <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+    <form class="contact-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="number" placeholder="Enter mobile number">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5"
+                        placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Maharashtra Mahavidyalaya, Nilanga</h3>
+            <p>
+                Department of Computer Science and Application
+            </p>
+            <p>
+                Email: info@college.com
+            </p>
+            <p>
+                © 2026 All Rights Reserved
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
